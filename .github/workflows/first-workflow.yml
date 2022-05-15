@@ -40,4 +40,4 @@ jobs:
           url=wwmknsdotcom
           echo "::set-output name=image_url::$url"
       - name: Get output value from previous step
-        run: echo "The output value is ${{ steps.generate-output.outputs.image_url }}""
+        run: echo "The output value is ${{ steps.generate-output.outputs.image_url }}"
