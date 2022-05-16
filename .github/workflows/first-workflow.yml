@@ -41,3 +41,10 @@ jobs:
           echo "::set-output name=image_url::$url"
       - name: Get output value from previous step
         run: echo "The output value is ${{ steps.generate-output.outputs.image_url }}"
+      - name: Checkout another repo
+        uses: actions/checkout@v3
+        with:
+          repository: vipulJain05/cypress-example
+          token: ${{ secrets.GH_PAT }} # `GH_PAT` is a secret that contains your PAT
+      - name: List files
+        run: echo "$(ls)"
